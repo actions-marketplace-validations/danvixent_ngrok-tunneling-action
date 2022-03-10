@@ -1,5 +1,5 @@
 name: 'Ngrok TCP Tunelling'
-description: 'A github action for tunelling TCP traffic from within Workflow environemt'
+description: 'A github action for tunelling TCP traffic from within Workflow enviroment'
 
 branding:
   icon: 'activity'  
@@ -16,13 +16,16 @@ inputs:
   ngrok_authtoken:
     description: 'Ngrok authorization token'
     required: true
+  os:
+    description: 'Operating system'
+    required: true
 
 runs:
   using: "composite"
   steps: 
-    - run: wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+    - run: ./download.sh ${{ inputs.os }}
       shell: bash
-    - run: unzip -qq ngrok-stable-linux-amd64.zip
+    - run: unzip -qq ngrok.zip
       shell: bash
     - run: ./ngrok authtoken ${{ inputs.ngrok_authtoken }}
       shell: bash
