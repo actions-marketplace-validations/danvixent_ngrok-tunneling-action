@@ -1,4 +1,4 @@
-name: 'Ngrok TCP Tunelling'
+name: 'Ngrok TCP Tunelling with different Operating sytems'
 description: 'A github action for tunelling TCP traffic from within Workflow enviroment'
 
 branding:
