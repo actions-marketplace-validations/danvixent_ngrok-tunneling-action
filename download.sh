@@ -13,3 +13,5 @@ elif [[ "$OS" == *"macos"* ]]; then
 else
     exit
 fi
+
+exit 0
