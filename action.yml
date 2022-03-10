@@ -25,9 +25,9 @@ runs:
   steps: 
     - run: ${{ github.action_path }}/download-ngrok.sh ${{ inputs.os }}
       shell: bash
-    - run: unzip -qq ngrok.zip
+    - run: unzip -qq ${{ github.action_path }}/ngrok.zip
       shell: bash
-    - run: ./ngrok authtoken ${{ inputs.ngrok_authtoken }}
+    - run: ${{ github.action_path }}/ngrok authtoken ${{ inputs.ngrok_authtoken }}
       shell: bash
-    - run: timeout ${{ inputs.timeout }} ./ngrok tcp ${{ inputs.port }}
+    - run: timeout ${{ inputs.timeout }} ${{ github.action_path }}/ngrok tcp ${{ inputs.port }}
       shell: bash
