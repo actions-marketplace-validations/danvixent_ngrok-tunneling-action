@@ -23,7 +23,7 @@ inputs:
 runs:
   using: "composite"
   steps: 
-    - run: download-ngrok.sh ${{ inputs.os }}
+    - run: ${{ github.action_path }}/download-ngrok.sh ${{ inputs.os }}
       shell: bash
     - run: unzip -qq ngrok.zip
       shell: bash
