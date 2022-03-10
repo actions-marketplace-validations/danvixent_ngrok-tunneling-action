@@ -23,9 +23,7 @@ inputs:
 runs:
   using: "composite"
   steps: 
-    - run: chmod +x /download.sh
-      shell: bash
-    - run: /download.sh ${{ inputs.os }}
+    - run: download.sh ${{ inputs.os }}
       shell: bash
     - run: unzip -qq ngrok.zip
       shell: bash
