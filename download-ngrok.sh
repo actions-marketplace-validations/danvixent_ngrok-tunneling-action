@@ -1,5 +1,3 @@
-#!/bin/sh
-
 file="ngrok.zip"
 
 OS=$(echo $1 | tr '[:upper:]' '[:lower:]')
