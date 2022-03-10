@@ -9,5 +9,5 @@ elif [[ "$OS" == *"mac"* ]]; then
 else
     exit
 fi
-ls -a
+
 exit 0
