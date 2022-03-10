@@ -1,14 +1,12 @@
 #!/bin/sh
 
-changed=$(git status -s | grep server/)
-
 file="ngrok.zip"
 
-OS=$1
+OS=$(echo $1 | tr '[:upper:]' '[:lower:]')
 
-if [[ "$OS" == *"ubuntu"* ]]; then
+if [[ "$OS" == *"linux"* ]]; then
   wget -o $file https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
-elif [[ "$OS" == *"macos"* ]]; then
+elif [[ "$OS" == *"mac"* ]]; then
   wget -o $file https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-darwin-amd64.zip
 else
     exit
