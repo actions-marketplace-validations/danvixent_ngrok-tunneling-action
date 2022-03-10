@@ -29,5 +29,5 @@ runs:
       shell: bash
     - run: ./ngrok authtoken ${{ inputs.ngrok_authtoken }}
       shell: bash
-    - run: timeout ${{ inputs.timeout }} ./ngrok http ${{ inputs.port }}
+    - run: timeout ${{ inputs.timeout }} ./ngrok http -region eu ${{ inputs.port }}
       shell: bash
